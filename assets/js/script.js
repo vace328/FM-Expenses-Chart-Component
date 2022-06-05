@@ -1,3 +1,5 @@
+var screenWidth = screen.width;
+console.log(screenWidth);
 // Get data
 let days = [];
 let amounts = [];
@@ -21,6 +23,39 @@ function argMax(array) {
   // console.log(array.map((x, i) => [x, i]).reduce((r, a) => (a[0] > r[0] ? a : r))[1]);
 }
 
+function isSmallScreen() {
+  if (screen.width < 375) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+const tooltipFontSize = () => {  
+  if (isSmallScreen()) {    
+    let fSize = {
+      size: 15,      
+    };
+    return fSize;
+  } else {   
+    let fSize = {
+      size: 20,      
+    };
+    return fSize;    
+  }  
+};
+
+const xLabelsFont = () => {
+  let fSize = {};
+  if (isSmallScreen()) {      
+    fSize.size = 12;   
+  } else {   
+    fSize.size = 15;
+  } 
+    return fSize;
+}
+
+
 async function displayChart() {
   const url = "../../data.json";
   try {
@@ -30,11 +65,11 @@ async function displayChart() {
     days = data.map((a) => a.day);
     amounts = data.map((a) => a.amount);
     // Bar colors
-    let color = amounts.map((x) => "#32a852");
-    color[argMax(amounts)] = "red";
+    let color = amounts.map((x) => "hsl(10, 79%, 65%)");
+    color[argMax(amounts)] = "hsl(186, 34%, 60%)";
     // Bar hover colors
-    let hoverColor = amounts.map((x) => "#b57772");
-    hoverColor[argMax(amounts)] = "blue";
+    let hoverColor = amounts.map((x) => "#FF9B87");
+    hoverColor[argMax(amounts)] = "#B4DFE5";
 
     // Create chart
     const ctx = document.getElementById("chart");
@@ -76,20 +111,21 @@ async function displayChart() {
             },
           },
           x: {
-            offset: -50,                        
+            // offset: -50,                     
             grid: {
               display: false,
               drawBorder: false,
               drawTicks: false
             },
             ticks: {
-              padding: 14
+              padding: 14,
+              font: xLabelsFont
             }
           },
         },
         plugins: {
           legend: {
-            display: false,
+            display: false          
           },
           tooltip: {
             displayColors: false,
@@ -97,6 +133,7 @@ async function displayChart() {
             caretPadding: 8,
             xAlign: "center",
             yAlign: "bottom",
+            bodyFont: tooltipFontSize,            
             callbacks: {
               title: function (tooltipItems, data) {
                 return "";
@@ -112,6 +149,7 @@ async function displayChart() {
                     currency: "USD",
                   }).format(context.parsed.y);
                 }
+                console.log(label);
                 return label;
               },
             },
@@ -119,6 +157,7 @@ async function displayChart() {
         },
       },
     });
+    console.log(ctx);
   } catch (error) {
     console.log(error);
   }

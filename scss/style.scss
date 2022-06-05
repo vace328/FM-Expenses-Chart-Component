@@ -25,10 +25,10 @@ body {
 }
 main {
     width: 100%;
+    max-width: 540px;
 }
 .chart-header {
     background-color: $prim_1;
-    background-color: orange;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,6 +38,7 @@ main {
 }
 .chart-header__summary p {
     display: block;
+    color: $neutral_lvl_1;
     &:first-of-type {
         font-weight: 700;
         font-size: 15px;
@@ -73,14 +74,13 @@ h2 {
     margin-bottom: 10px;
 }
 canvas {
-    width: 100%;
-    // border-bottom: 2px solid yellow;    
+    width: 100%;    
 }
 
 
 .chart-body__summary {
     padding: 26px 8px 0px 8px;
-    border-top: 2px solid red;
+    border-top: 2px solid $neutral_lvl_2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -93,6 +93,7 @@ canvas {
     // padding-top: 6px;  
     &:first-of-type {
         margin-bottom: 12px;
+        color: $neutral_lvl_3;
     }
     &:last-of-type {
         font-size: 30px;
@@ -108,15 +109,72 @@ canvas {
     text-align: right;
     &:first-of-type {
         padding-bottom: 4px;
-    }
-   
+    }   
+    &:last-of-type {
+        color: $neutral_lvl_3;
+    }   
 }
 
-// @media screen and (max-width: 700px) {
-    
-//     .cards-container { 
-//         max-width: 327px;      
-//         flex-direction: column;
-        
-//     }
-// }
+@media screen and (min-width: 376px) {    
+    body { 
+        padding: 182px 16px 0 16px;       
+    }
+    .chart-header {
+        padding: 30px;
+        border-radius: 18px;
+        margin-bottom: 24px;
+    }
+    .chart-header__summary p {        
+        &:first-of-type {
+           font-size: 18px;
+            // letter-spacing: -0.4px;   
+            padding-bottom: 15px;     
+            padding-top: 0;     
+        }    
+        &:last-of-type {
+            font-size: 32px;
+        }
+    }
+    .chart-header__brand {
+        width: 72px;
+        padding-right: 8px;
+        padding-top: 5px;        
+    }
+    .chart-body {
+        border-radius: 18px;
+        padding: 36px 30px;
+    }
+    .chart-body__graph {
+        margin-bottom: 14px;
+    }
+    h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    canvas {
+        font-size: 15px;
+    }
+    .chart-body__summary {
+        padding: 36px 8px 0px 8px; 
+    }
+    .chart-body__summary_total p {
+        font-size: 18px;                  
+        &:first-of-type {
+            margin-bottom: 12px;
+        }
+        &:last-of-type {
+            font-size: 50px;
+        }
+    }
+    .chart-body__summary_growth p {        
+        font-size: 18px;
+        letter-spacing: -0.4px;
+        padding-right: 2px;
+        &:first-of-type {
+            padding-bottom: 6px;
+        }   
+        &:last-of-type {
+            padding-bottom: 6px;
+        }   
+    }
+}
