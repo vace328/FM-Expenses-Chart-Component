@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <title>Frontend Mentor | Expenses chart component</title>
+</head>
+<body>
+  <header>
+    <h1>Expenses chart</h1>
+  </header>
+  <main class="chart-wrapper">
+    <div class="chart-header">
+      <div class="chart-header__summary">
+        <p class="chart-header__balance">My balance</p> 
+        <p>$921.48</p>
+      </div>      
+      <div class="chart-header__brand">
+        <img src="images/logo.svg" alt="logo image">
+      </div>
+    </div>
+    <section class="chart-body">
+      <h2 class="chart-body__title">Spending - Last 7 days</h2>
+      <div class="chart-body__graph">
+        <canvas id="chart" height="245px"></canvas>
+        <!-- mon
+        tue
+        wed
+        thu
+        fri
+        sat
+        sun -->
+      </div>
+      <div class="chart-body__summary">
+        <div class="chart-body__summary_total">
+          <p>Total this month</p>
+          <p>$478.33</p>
+        </div>
+        <div class="chart-body__summary_growth">
+          <p>+2.4%</p>
+          <p>from last month</p>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+  <!-- <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"><span>Frontend Mentor</span></a>.
+    Coded by <a href="#"><span>Ana Z</span></a>.
+  </footer> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+  <script type="module" src="assets/js/script.js"></script>
+</body>
+</html>

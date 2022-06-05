@@ -1,0 +1,122 @@
+/*----------  base
+------------------------------------------------------------------------------*/
+@import "base/reset";
+@import "base/variables";
+@import "base/typography"; 
+
+/*----------  components
+------------------------------------------------------------------------------*/
+@import "components/buttons";
+
+/*----------  layout
+------------------------------------------------------------------------------*/
+@import "layout/header";    
+@import "layout/footer";    
+ 
+body {
+    box-sizing: border-box;
+    background-color: $neutral_lvl_2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 68px 16px 0 16px;
+}
+main {
+    width: 100%;
+}
+.chart-header {
+    background-color: $prim_1;
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px 24px 20px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+.chart-header__summary p {
+    display: block;
+    &:first-of-type {
+        font-weight: 700;
+        font-size: 15px;
+        letter-spacing: -0.4px;   
+        padding-bottom: 10px;     
+        padding-top: 6px;     
+    }    
+    &:last-of-type {
+        font-weight: 700;
+        font-size: 24px;
+    }
+}
+.chart-header__brand {
+    width: 60px;
+    padding-right: 3px;
+    padding-top: 10px;
+    img {
+        width: 100%;
+    }
+}
+
+
+.chart-body {
+    border-radius: 10px;
+    // height: 421px;
+    background-color: $neutral_lvl_1;
+    padding: 28px 12px;    
+}
+h2 {
+    padding-left: 9px;
+}
+.chart-body__graph {
+    margin-bottom: 10px;
+}
+canvas {
+    width: 100%;
+    // border-bottom: 2px solid yellow;    
+}
+
+
+.chart-body__summary {
+    padding: 26px 8px 0px 8px;
+    border-top: 2px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chart-body__summary_total p {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.3px;   
+    // padding-bottom: 10px;     
+    // padding-top: 6px;  
+    &:first-of-type {
+        margin-bottom: 12px;
+    }
+    &:last-of-type {
+        font-size: 30px;
+    }
+}
+.chart-body__summary_growth {
+    align-self: flex-end;
+}
+.chart-body__summary_growth p {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.3px;
+    text-align: right;
+    &:first-of-type {
+        padding-bottom: 4px;
+    }
+   
+}
+
+// @media screen and (max-width: 700px) {
+    
+//     .cards-container { 
+//         max-width: 327px;      
+//         flex-direction: column;
+        
+//     }
+// }
