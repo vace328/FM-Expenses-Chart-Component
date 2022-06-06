@@ -1,26 +1,15 @@
 var screenWidth = screen.width;
-console.log(screenWidth);
-// Get data
-let days = [];
-let amounts = [];
-let t = [];
-let arr = [5, 9, 5, 1, 35, 4, 2];
 
+// Get data
+const url = "../../data.json";
+// let days=[];
+// let amounts=[];
+
+
+console.log(amounts);
 function argMax(array) {
   // return index of the highest value in array
   return array.map((x, i) => [x, i]).reduce((r, a) => (a > r ? a : r))[1];
-
-  // t =  array.map((x, i) => {
-  //   console.log([x, i]);
-  //   [x, i].reduce((r, a) => {
-  //     console.log(r);
-  //     console.log(a);
-  //     console.log(a[0] > r[0] ? a : r);
-  //     // (a[0] > r[0] ? a : r)
-  //   });
-  // })[0];
-
-  // console.log(array.map((x, i) => [x, i]).reduce((r, a) => (a[0] > r[0] ? a : r))[1]);
 }
 
 function isSmallScreen() {
@@ -54,22 +43,31 @@ const xLabelsFont = () => {
   } 
     return fSize;
 }
-
+ // Bar colors
+ let color = amounts.map((x) => "hsl(10, 79%, 65%)");
+ color[argMax(amounts)] = "hsl(186, 34%, 60%)";
+ // Bar hover colors
+ let hoverColor = amounts.map((x) => "#FF9B87");
+ hoverColor[argMax(amounts)] = "#B4DFE5";
 
 async function displayChart() {
-  const url = "../../data.json";
-  try {
-    const response = await fetch(url);
-    let data = [];
-    data = await response.json();
-    days = data.map((a) => a.day);
-    amounts = data.map((a) => a.amount);
-    // Bar colors
-    let color = amounts.map((x) => "hsl(10, 79%, 65%)");
-    color[argMax(amounts)] = "hsl(186, 34%, 60%)";
-    // Bar hover colors
-    let hoverColor = amounts.map((x) => "#FF9B87");
-    hoverColor[argMax(amounts)] = "#B4DFE5";
+  
+  
+    // const response = await fetch(url);
+    // let data = [];
+    // data = await response.json();
+    
+  
+    fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      
+    // let days = [];
+    // let amounts = [];
+      let days = data.map((a) => a.day);
+      let amounts = data.map((a) => a.amount);
+      
+    });   
 
     // Create chart
     const ctx = document.getElementById("chart");
@@ -156,11 +154,7 @@ async function displayChart() {
           },
         },
       },
-    });
-    console.log(ctx);
-  } catch (error) {
-    console.log(error);
-  }
+    });  
 }
 
 displayChart();
