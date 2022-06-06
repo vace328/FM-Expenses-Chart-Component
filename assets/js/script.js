@@ -1,4 +1,4 @@
-let url = "../../data.json";
+let url = "../data.json";
 const ctx = document.getElementById("chart");
 let allData = [];
 let days = [];
