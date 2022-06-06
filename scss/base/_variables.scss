@@ -1,12 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
-
-
 // ----- Font family-----
 $ffamily_primary: 'DM Sans';
 
 // ----- Font size-----
 $fsize_primary: 18px;
-
 
 // ----- Colors -----
 $neutral_lvl_1: hsl(33, 100%, 98%);
@@ -20,7 +17,3 @@ $prim_2: hsl(186, 34%, 60%);
 // paragraphs
 $text_dark: black;
 $text_light:hsla(0, 0%, 100%, 0.75);
-
-// ----- Break points -----
-$small: 375px;
-$large: 1440px;

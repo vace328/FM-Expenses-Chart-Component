@@ -55,8 +55,6 @@ main {
         width: 100%;
     }
 }
-
-
 .chart-body {
     border-radius: 10px;
     // height: 421px;
@@ -72,8 +70,6 @@ h2 {
 canvas {
     width: 100%;    
 }
-
-
 .chart-body__summary {
     padding: 26px 8px 0px 8px;
     border-top: 2px solid $neutral_lvl_2;
@@ -110,6 +106,7 @@ canvas {
         color: $neutral_lvl_3;
     }   
 }
+
 
 @media screen and (min-width: 376px) {    
     body { 

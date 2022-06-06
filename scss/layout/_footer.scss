@@ -2,11 +2,8 @@
     font-size: 11px;
     text-align: center;
     padding: 5px;
-    color: $text_dark; 
-    // position: absolute;
-    // bottom: 0;
+    color: $text_dark;    
   }
-
   .attribution a {
     color: $text_dark;
     font-size: 13px;
@@ -28,12 +25,3 @@
         z-index: -10;
     }
   }
-
-//   @media screen and (max-width: 950px) {
-//     .attribution {
-//       padding-top: 10px;
-//       position: unset;
-//       bottom: unset;
-//     }
-    
-// }

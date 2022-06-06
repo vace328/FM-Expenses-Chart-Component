@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/vace328/FM-Expenses-Chart-Component)
-- Live Site URL: [Add live site URL here](https://vace328.github.io/FM-Expenses-Chart-Component/)
+- Solution URL: [GitHub](https://github.com/vace328/FM-Expenses-Chart-Component)
+- Live Site URL: [Demo](https://vace328.github.io/FM-Expenses-Chart-Component/)
 
 ## My process
 
