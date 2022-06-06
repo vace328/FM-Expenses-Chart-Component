@@ -4,10 +4,6 @@
 @import "base/variables";
 @import "base/typography"; 
 
-/*----------  components
-------------------------------------------------------------------------------*/
-@import "components/buttons";
-
 /*----------  layout
 ------------------------------------------------------------------------------*/
 @import "layout/header";    
@@ -145,7 +141,7 @@ canvas {
         padding: 36px 30px;
     }
     .chart-body__graph {
-        margin-bottom: 14px;
+        margin-bottom: 16px;
     }
     h2 {
         font-size: 32px;
@@ -155,7 +151,7 @@ canvas {
         font-size: 15px;
     }
     .chart-body__summary {
-        padding: 36px 8px 0px 8px; 
+        padding: 36px 8px 8px 8px; 
     }
     .chart-body__summary_total p {
         font-size: 18px;                  

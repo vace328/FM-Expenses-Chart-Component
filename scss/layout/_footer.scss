@@ -9,7 +9,6 @@
 
   .attribution a {
     color: $text_dark;
-    // font-weight: 200;
     font-size: 13px;
   }
   .attribution a span{
@@ -23,7 +22,7 @@
         width: 100%;
         height: 100%;
         transform: skewX(-15deg);
-        background-color: $prim_1;        
+        background-color: $prim_2;        
         top: 0;
         left: 0;
         z-index: -10;
